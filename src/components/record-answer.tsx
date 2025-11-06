@@ -53,8 +53,9 @@ export const RecordAnswer = ({
   } = useSpeechToText({
     continuous: true,
     useLegacyResults: false,
+    onError: (e) => console.error("Speech-to-text error:", e),
   });
-
+console.log(isRecording)
   const [userAnswer, setUserAnswer] = useState("");
   const [isAiGenerating, setIsAiGenerating] = useState(false);
   const [aiResult, setAiResult] = useState<AIResponse | null>(null);
